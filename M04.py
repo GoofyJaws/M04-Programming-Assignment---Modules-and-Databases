@@ -1,21 +1,26 @@
+#Jordy Jordan 
+#16.8
+#Second way to do the assigment
+
 import sqlite3
 
+#connects with the database
 def connect():
     conn=sqlite3.connect("books2.db")
     cur=conn.cursor()
     cur.execute("CREATE TABLE IF NOT EXISTS book(title text,author text,year integer)")
-    print("here1")
     conn.commit()
     conn.close()
 
+#insert the information
 def insert(title,author,year):
     conn = sqlite3.connect("books2.db")
     cur=conn.cursor()
     cur.execute("INSERT INTO book VALUES (?,?,?)",(title,author,year))
-    print("here2")
     conn.commit()
     conn.close()
 
+#view the information
 def view():
     conn = sqlite3.connect("books2.db")
     cur = conn.cursor()
@@ -26,6 +31,7 @@ def view():
     return rows
     conn.close()
 
+#delete the information by the year
 def delete(year):
     conn = sqlite3.connect("books2.db")
     cur = conn.cursor()
