@@ -1,6 +1,7 @@
 #Jordy Jordan 
 #16.8
 #Second way to do the assigment
+#This requires books2.cvs and books2.db
 
 import sqlite3
 
